@@ -1,5 +1,13 @@
 **1.- Crear el Dockerfile**
 
+```plaintext
+FROM openjdk:11
+COPY . /usr/src/passwordapi
+WORKDIR /usr/src/passwordapi
+EXPOSE 8080
+CMD ["java","-jar","passwordapi.jar"]
+```
+
 **2.- Construir la imagen**
 
 ```plaintext
