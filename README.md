@@ -5,6 +5,9 @@ FROM openjdk:11
 COPY . /usr/src/passwordapi
 WORKDIR /usr/src/passwordapi
 EXPOSE 8080
+RUN addgroup --system --gid 1001 appuser
+RUN adduser  --system --uid  1001   --group appuser
+RUN  chown -R appuser:appuser /usr/src/passwordapi
 CMD ["java","-jar","passwordapi.jar"]
 ```
 
